@@ -24,8 +24,7 @@ unless File.exists?(gitlab_user_file)
     source 'user.rb.erb'
     variables(
       username: node['gitlab']['admin_user'],
-      password: node['gitlab']['admin_password'],
-      email: node['gitlab']['admin_email']
+      password: node['gitlab']['admin_password']
     )
   end
 
