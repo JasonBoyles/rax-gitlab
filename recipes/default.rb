@@ -35,7 +35,7 @@ unless File.exists?(gitlab_user_file)
     cwd node['gitlab']['app_home']
     environment('LANG' => 'en_US.UTF-8', 'LC_ALL' => 'en_US.UTF-8')
     command <<-EOS
-    ../bin/rails console production < user.rb
+    ./bin/rails console production < user.rb
     rm -f user.rb
     EOS
     action :run
