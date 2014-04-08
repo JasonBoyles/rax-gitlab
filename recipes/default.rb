@@ -9,6 +9,8 @@ if node['gitlab']['generate_self_signed_cert']
   end
 end
 
+node.set[:gitlab][:git_branch] = 'v6.7.3'
+
 include_recipe 'gitlab::default'
 include_recipe 'gitlab::mysql'
 
