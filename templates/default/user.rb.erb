@@ -1,3 +1,5 @@
-user = User.find_by(email: '<%= @email %>')
+user = User.find_by(id: '1')
+user.username = '<%= @username %>'
+user.email = '<%= @email %>'
 user.password = '<%= @password %>'
 user.save
