@@ -28,7 +28,7 @@ when 'debian'
   	action :allow
   end
   firewall_rule "Firewall rule, tcp/22" do
-    port listen_port
+    port 22
     protocol :tcp
     direction :in
     action :allow
@@ -42,7 +42,7 @@ when 'rhel'
     rule       "-p tcp --dport #{listen_port} -j ACCEPT"
     action :create_if_missing
   end
-  iptables_ng_rule 'Firewall rule, tcp/#{listen_port}' do
+  iptables_ng_rule 'Firewall rule, tcp/22' do
     name       'GitLab'
     chain      'INPUT'
     table      'filter'
